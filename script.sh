@@ -1,5 +1,5 @@
 #!/bin/bash
-export INPUT_TARGET_ADDRESS=https://ratehub.ca
+export INPUT_TARGET_ADDRESS=http:localhost:11111
 export INPUT_EXPORT_TO=html
 export INPUT_WILL_CHECK_PASS=yes
 export INPUT_MIN_PERFORMANCE=0.5
@@ -9,6 +9,7 @@ export INPUT_MIN_SEO=0.5
 export INPUT_MIN_PWA=0.5
 
 ### docker run with env to test localhost:8080
+sleep 10
 sudo docker container run --network="host" --rm \
 -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS \
 -e INPUT_EXPORT_TO=$INPUT_EXPORT_TO \

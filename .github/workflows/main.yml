@@ -7,9 +7,13 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v2
-          
-        - run: pwd && ls -al
         
         - run: chmod +x ./script.sh && ./script.sh
+        
+        - run: cd webserver && npm install
+
+        - run: cd .. && npm run start
+        
+        
           
 

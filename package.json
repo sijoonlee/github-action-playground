@@ -1,0 +1,24 @@
+{
+  "name": "lighthouse-action-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "(cd webserver && npm run start) & ./script.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sijoonlee/github-action-playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sijoonlee/github-action-playground/issues"
+  },
+  "homepage": "https://github.com/sijoonlee/github-action-playground#readme"
+}

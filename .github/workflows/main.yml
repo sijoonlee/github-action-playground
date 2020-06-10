@@ -12,7 +12,7 @@ jobs:
         
         - run: cd webserver && npm install
 
-        - run: pwd && cd .. && npm run start
+        - run: npm run start
         
         
           

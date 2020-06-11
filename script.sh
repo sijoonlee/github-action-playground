@@ -21,7 +21,7 @@ sudo docker container run --network="host" --rm \
 -e INPUT_MIN_PWA=$INPUT_MIN_PWA \
 sijoonlee/lighthouse-v2
 
-read passOrFail < passOrFail.txt
+read passOrFail < ./lighthouse-report/passOrFail.txt
 echo $passOrFail
 if [ $passOrFail == "pass" ]; then 
     exit 0

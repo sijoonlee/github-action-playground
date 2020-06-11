@@ -37,7 +37,7 @@ jobs:
               sijoonlee/lighthouse-v2
 
         - name: check pass/fail
-          run: read passOrFail < ./lighthouse-report/passOrFail.txt && echo $passOrFail &&
+          run: read passOrFail < /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt && echo $passOrFail &&
               if [ $passOrFail == "fail" ]; then echo 1; else echo 0; fi
 
         - name: save artifact

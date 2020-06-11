@@ -35,10 +35,6 @@ jobs:
               -e INPUT_MIN_PWA=$INPUT_MIN_PWA 
               -e INPUT_WILL_EXIT_ON_FAIL=$INPUT_WILL_EXIT_ON_FAIL
               sijoonlee/lighthouse-v2:latest
-
-        - name: check pass/fail
-          run: |
-            cat /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt
               
         - name: save artifact
           uses: actions/upload-artifact@v1

@@ -38,12 +38,7 @@ jobs:
 
         - name: check pass/fail
           run: read passOrFail < ./lighthouse-report/passOrFail.txt &&
-              echo $passOrFail &&
-              if [ $passOrFail == "pass" ]; then 
-                  exit 0
-              else
-                  exit 1
-              fi
+              if [ $passOrFail == "pass" ]; then exit 0; else exit 1; fi
 
         - name: save artifact
           uses: actions/upload-artifact@v1

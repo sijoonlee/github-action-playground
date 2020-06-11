@@ -38,7 +38,7 @@ jobs:
 
         - name: check pass/fail
           run: read passOrFail < ./lighthouse-report/passOrFail.txt &&
-              echo $passOrFail
+              echo $passOrFail &&
               if [ $passOrFail == "pass" ]; then 
                   exit 0
               else

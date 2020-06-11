@@ -7,7 +7,7 @@ jobs:
       steps:
         - name: Checkout
           uses: actions/checkout@v2
-        - run: pwd
+        - run: pwd && ls
         
         - run: docker image build -t mock-server ./packages/web-server/docker/static
         - run: docker container run --rm -d -p 11111:80 -v ./packages/web-server/out:/usr/share/nginx/html mock-server

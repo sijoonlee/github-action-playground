@@ -9,10 +9,15 @@ jobs:
           uses: actions/checkout@v2
         - run: pwd && ls
         
-        - run: docker image build -t mock-server ./packages/web-server/docker/static
-        - run: docker container run --rm -d -p 11111:80 -v ./packages/web-server/out:/usr/share/nginx/html mock-server
+        - run: docker image build -t mock-server /home/runner/work/github-action-playground/github-action-playground/packages/web-server/docker/static
+        - run: docker container run --rm -d -p 11111:80 -v /home/runner/work/github-action-playground/github-action-playground/packages/web-server/out:/usr/share/nginx/html mock-server
         - run: chmod +x ./script.sh
         - run: ./script.sh
+        - name: save artifact
+          uses: actions/upload-artifact@v1
+          with:
+          name: report_file
+          path: /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/report.html
         
         
           

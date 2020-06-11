@@ -8,7 +8,7 @@ export INPUT_MIN_BEST_PRACTICES=0.5
 export INPUT_MIN_SEO=0.5
 export INPUT_MIN_PWA=0.5
 
-### docker run with env to test localhost:8080
+### docker run with env to test localhost:11111
 sudo docker container run --network="host" --rm \
 -v /usr/src/app/lighthouse-report:/home/runner/work/github-action-playground/github-action-playground/lighthouse-report \
 -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS \

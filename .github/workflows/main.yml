@@ -18,7 +18,6 @@ jobs:
           env:
             INPUT_TARGET_ADDRESS: http:localhost:11111
             INPUT_EXPORT_TO: html
-            INPUT_WILL_CHECK_PASS: yes
             INPUT_MIN_PERFORMANCE: 0.5
             INPUT_MIN_ACCESSIBILITY: 0.5
             INPUT_MIN_BEST_PRACTICES: 0.5
@@ -27,8 +26,7 @@ jobs:
           run: docker container run --network="host" --rm
               -v /home/runner/work/github-action-playground/github-action-playground/lighthouse-report:/usr/src/app/lighthouse-report
               -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS
-              -e INPUT_EXPORT_TO=$INPUT_EXPORT_TO
-              -e INPUT_WILL_CHECK_PASS=$INPUT_WILL_CHECK_PASS
+              -e INPUT_WILL_EXIT_ON_FAIL=$INPUT_WILL_EXIT_ON_FAIL
               -e INPUT_MIN_PERFORMANCE=$INPUT_MIN_PERFORMANCE
               -e INPUT_MIN_ACCESSIBILITY=$INPUT_MIN_ACCESSIBILITY
               -e INPUT_MIN_BEST_PRACTICES=$INPUT_MIN_BEST_PRACTICES
@@ -37,7 +35,7 @@ jobs:
               sijoonlee/lighthouse-v2
 
         - name: check pass/fail
-          run: while read line; do if [ $line == "fail" ]; then exit 1; fi; done < /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt
+          run: cat /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt
               
         - name: save artifact
           uses: actions/upload-artifact@v1

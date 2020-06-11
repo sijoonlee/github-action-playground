@@ -18,7 +18,7 @@ jobs:
           env:
             INPUT_TARGET_ADDRESS: http:localhost:11111
             INPUT_EXPORT_TO: html
-            INPUT_WILL_CHECK_PASS: no
+            INPUT_WILL_CHECK_PASS: yes
             INPUT_MIN_PERFORMANCE: 0.5
             INPUT_MIN_ACCESSIBILITY: 0.5
             INPUT_MIN_BEST_PRACTICES: 0.5

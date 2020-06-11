@@ -16,8 +16,8 @@ jobs:
         - name: save artifact
           uses: actions/upload-artifact@v1
           with:
-          name: report_file
-          path: /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/report.html
+            name: report_file
+            path: /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/report.html
         
         
           

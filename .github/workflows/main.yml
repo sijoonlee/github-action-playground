@@ -26,7 +26,6 @@ jobs:
           run: docker container run --network="host" --rm
               -v /home/runner/work/github-action-playground/github-action-playground/lighthouse-report:/usr/src/app/lighthouse-report
               -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS
-              -e INPUT_WILL_EXIT_ON_FAIL=$INPUT_WILL_EXIT_ON_FAIL
               -e INPUT_MIN_PERFORMANCE=$INPUT_MIN_PERFORMANCE
               -e INPUT_MIN_ACCESSIBILITY=$INPUT_MIN_ACCESSIBILITY
               -e INPUT_MIN_BEST_PRACTICES=$INPUT_MIN_BEST_PRACTICES

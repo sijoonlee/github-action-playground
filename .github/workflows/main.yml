@@ -37,7 +37,9 @@ jobs:
               sijoonlee/lighthouse-v2
 
         - name: check pass/fail
-          run: cat /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt
+          run: read passOrFail < /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt &&
+              echo $passOrFail &&
+              if [ $passOrFail == "fail" ]; then exit 1; fi
 
         - name: save artifact
           uses: actions/upload-artifact@v1

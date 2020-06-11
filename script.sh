@@ -9,8 +9,8 @@ export INPUT_MIN_SEO=0.5
 export INPUT_MIN_PWA=0.5
 
 ### docker run with env to test localhost:8080
-sleep 10
 sudo docker container run --network="host" --rm \
+-v /usr/src/app/lighthouse-report:/home/runner/work/github-action-playground/github-action-playground/lighthouse-report \
 -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS \
 -e INPUT_EXPORT_TO=$INPUT_EXPORT_TO \
 -e INPUT_WILL_CHECK_PASS=$INPUT_WILL_CHECK_PASS \
@@ -20,3 +20,11 @@ sudo docker container run --network="host" --rm \
 -e INPUT_MIN_SEO=$INPUT_MIN_SEO \
 -e INPUT_MIN_PWA=$INPUT_MIN_PWA \
 sijoonlee/lighthouse-v2
+
+read passOrFail < passOrFail.txt
+echo $passOrFail
+if [ $passOrFail == "pass" ]; then 
+    exit 0
+else
+    exit 1
+fi

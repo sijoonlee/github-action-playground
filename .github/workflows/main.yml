@@ -8,11 +8,10 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v2
         
+        - run: docker image build -t mock-server ./packages/web-server/docker/static
+        - run: docker container run --rm -d -p 11111:80 -v ./packages/web-server/out:/usr/share/nginx/html mock-server
         - run: chmod +x ./script.sh
-        
-        - run: cd webserver && npm install
-
-        - run: npm run start
+        - run: ./script.sh
         
         
           

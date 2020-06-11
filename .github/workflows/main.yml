@@ -37,8 +37,8 @@ jobs:
               sijoonlee/lighthouse-v2
 
         - name: check pass/fail
-          run: read passOrFail < /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt
-
+          run: while read line; do if [ $line == "fail" ]; then exit 1; fi; done < /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/passOrFail.txt
+              
         - name: save artifact
           uses: actions/upload-artifact@v1
           with:

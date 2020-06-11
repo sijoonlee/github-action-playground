@@ -24,16 +24,16 @@ jobs:
             INPUT_MIN_BEST_PRACTICES: 0.5
             INPUT_MIN_SEO: 0.5
             INPUT_MIN_PWA: 0.5
-          run: docker container run --network="host" --rm \
+          run: docker container run --network="host" --rm
               -v /home/runner/work/github-action-playground/github-action-playground/lighthouse-report:/usr/src/app/lighthouse-report \
-              -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS \
-              -e INPUT_EXPORT_TO=$INPUT_EXPORT_TO \
-              -e INPUT_WILL_CHECK_PASS=$INPUT_WILL_CHECK_PASS \
-              -e INPUT_MIN_PERFORMANCE=$INPUT_MIN_PERFORMANCE \
-              -e INPUT_MIN_ACCESSIBILITY=$INPUT_MIN_ACCESSIBILITY \
-              -e INPUT_MIN_BEST_PRACTICES=$INPUT_MIN_BEST_PRACTICES \
-              -e INPUT_MIN_SEO=$INPUT_MIN_SEO \
-              -e INPUT_MIN_PWA=$INPUT_MIN_PWA \
+              -e INPUT_TARGET_ADDRESS=$INPUT_TARGET_ADDRESS
+              -e INPUT_EXPORT_TO=$INPUT_EXPORT_TO
+              -e INPUT_WILL_CHECK_PASS=$INPUT_WILL_CHECK_PASS
+              -e INPUT_MIN_PERFORMANCE=$INPUT_MIN_PERFORMANCE
+              -e INPUT_MIN_ACCESSIBILITY=$INPUT_MIN_ACCESSIBILITY
+              -e INPUT_MIN_BEST_PRACTICES=$INPUT_MIN_BEST_PRACTICES
+              -e INPUT_MIN_SEO=$INPUT_MIN_SEO
+              -e INPUT_MIN_PWA=$INPUT_MIN_PWA
               sijoonlee/lighthouse-v2
 
         - name: check pass/fail

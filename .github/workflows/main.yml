@@ -15,6 +15,7 @@ jobs:
           run: docker container run --rm -d -p 11111:80 -v /home/runner/work/github-action-playground/github-action-playground/packages/web-server/out:/usr/share/nginx/html mock-server
 
         - name: Setting Env for lighthouse
+          run: echo "Env setting ...""
           env:
             INPUT_TARGET_ADDRESS: http:localhost:11111
             INPUT_EXPORT_TO: html
@@ -46,7 +47,7 @@ jobs:
               else
                   exit 1
               fi
-              
+
         - name: save artifact
           uses: actions/upload-artifact@v1
           with:

@@ -15,7 +15,9 @@ jobs:
           run: docker container run --rm -d -p 11111:80 -v /home/runner/work/github-action-playground/github-action-playground/packages/web-server/out:/usr/share/nginx/html mock-server
 
         - name: make list of html files
-          run: find /home/runner/work/github-action-playground/github-action-playground/packages/web-server/out -maxdepth 1 -type f -name '*.html' -not -path '*/\.*' | sed 's/^\.\///g' | sort > lighthouse-report/files.txt
+          run: |
+            mkdir lighthouse-report
+            find /home/runner/work/github-action-playground/github-action-playground/packages/web-server/out -maxdepth 1 -type f -name '*.html' -not -path '*/\.*' | sed 's/^\.\///g' | sort > lighthouse-report/files.txt
 
         - name: run Lighthouse
           env:
@@ -40,7 +42,7 @@ jobs:
               -e INPUT_MIN_SEO=$INPUT_MIN_SEO 
               -e INPUT_MIN_PWA=$INPUT_MIN_PWA 
               sijoonlee/lighthouse-v2:latest
-              
+
         - name: zip report folder
           run: zip -r lighthouse_report.zip /home/runner/work/github-action-playground/github-action-playground/lighthouse-report
 

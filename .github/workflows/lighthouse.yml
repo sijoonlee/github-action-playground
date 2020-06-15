@@ -18,7 +18,7 @@ jobs:
           run: |
             mkdir lighthouse-report
             cd /home/runner/work/github-action-playground/github-action-playground/packages/web-server/out
-            find . -maxdepth 1 -type f -name '*.html' -not -path '*/\.*' | sed 's/^\.\///g' | sort > files.txt
+            find . -maxdepth 1 -type f -name '*.html' -not -path '*/\.*' | sed 's/^\.\///g' | sort > /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/files.txt
 
         - name: run Lighthouse
           env:

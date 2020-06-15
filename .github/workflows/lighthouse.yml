@@ -43,7 +43,7 @@ jobs:
               sijoonlee/lighthouse-v2:latest
 
         - name: zip report folder
-          run: zip -r lighthouse_report.zip /home/runner/work/github-action-playground/github-action-playground/lighthouse-report
+          run: zip -r /home/runner/work/github-action-playground/github-action-playground/lighthouse_report.zip /home/runner/work/github-action-playground/github-action-playground/lighthouse-report
 
         - name: save artifact
           uses: actions/upload-artifact@v1

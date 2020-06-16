@@ -10,4 +10,4 @@ ls $search_path | grep *.txt > filename.txt
 
 find $(pwd) -maxdepth 1 -type f -not -path '*/\.*' | sort
 
-find . -maxdepth 1 -type f -name '*.html' -not -path '*/\.*' | sed 's/^\.\///g' | sort
+find . -maxdepth 1 -type f -name '*.html' -not -path '*/\.*' | sed 's/^\.\///g' | sort > files.txt

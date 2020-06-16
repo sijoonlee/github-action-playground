@@ -1,3 +1,6 @@
+# Explain yml file
+
+```
 name: A workflow for lighthouse action
 on: push
 jobs:
@@ -52,7 +55,7 @@ jobs:
           with:
             name: report_files
             path: /home/runner/work/github-action-playground/github-action-playground/lighthouse-report/lighthouse_report.zip
-        
-        
-          
+```        
 
+# Docker image repo
+https://github.com/sijoonlee/lighthouse-docker-image
